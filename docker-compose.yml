@@ -1,0 +1,14 @@
+services:
+
+  db:
+    image: postgres:18
+    restart: always
+    container_name: bookSave_db
+    environment:
+      POSTGRES_DB: bookSave_db
+      POSTGRES_USER: caspar
+      POSTGRES_PASSWORD: caspar
+    ports:
+      - "1010:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql
