@@ -84,4 +84,4 @@ $RECYCLE.BIN/
 spring-boot/src/main/resources/application.properties
 
 # Postgres Data
-spring-boot/pgdata
+/pgdata/
