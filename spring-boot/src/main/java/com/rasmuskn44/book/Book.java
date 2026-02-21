@@ -4,6 +4,8 @@ import com.rasmuskn44.author.Author;
 import com.rasmuskn44.language.Language;
 import com.rasmuskn44.tag.Tag;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
+
 import java.util.Set;
 
 @Entity
@@ -20,7 +22,7 @@ public class Book {
     @JoinColumn(nullable = false)
     private Language language;
 
-    @Column
+    @ColumnDefault("0")
     private int pages;
 
     @ManyToMany
@@ -44,4 +46,28 @@ public class Book {
             )
     )
     private Set<Tag> tags;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public Set<Tag> getTags() {
+        return tags;
+    }
 }

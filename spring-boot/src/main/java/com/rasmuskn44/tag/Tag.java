@@ -11,5 +11,11 @@ public class Tag {
     @Column(unique = true, nullable = false)
     private String tag;
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getTag() {
+        return tag;
+    }
 }
